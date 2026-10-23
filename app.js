@@ -32,11 +32,12 @@ app.get('/',(req,res)=>{
     res.send("This subscription tracker is built by Hrishikesh Pathak");
 });
 
-app.listen(PORT,async ()=>{
+const port = Number(PORT) || 3000;
 
-    console.log("server running on port 3000");
-    connectToDatabase()
+await connectToDatabase();
+
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running on port ${port}`);
 });
-
 
 export default app;
