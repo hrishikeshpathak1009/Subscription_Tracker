@@ -44,7 +44,7 @@ export const signUp = async(req,res,next)=>{
             message:'User created successfully',
             data:{
                 token,
-                user:newUsers[0],
+                //  removed for security
             }
 
         })
@@ -82,7 +82,8 @@ export const signIn= async (req,res,next)=>{
             success:true,
             message:'user signed in successfully',
         data:{
-            token,user
+            token,
+            // user removed for security
         }})
 
     }

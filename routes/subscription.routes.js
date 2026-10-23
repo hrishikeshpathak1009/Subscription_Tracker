@@ -4,11 +4,11 @@ import { createSubscription, getUserSubscriptions,getWorkflowStatus } from '../c
 
 const subscriptionRouter=Router();
 
-subscriptionRouter.get('/',(req,res)=>{
-    res.send("GET all subscriptions");
-})
+// subscriptionRouter.get('/',(req,res)=>{
+//     res.send("GET all subscriptions");
+// })
 
-subscriptionRouter.get('/:id',getUserSubscriptions)
+subscriptionRouter.get('/:id',authorize,getUserSubscriptions)
 
 subscriptionRouter.post('/',authorize, createSubscription)
 

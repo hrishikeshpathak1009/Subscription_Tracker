@@ -4,7 +4,7 @@ import authorize from '../middleware/auth.middeleware.js';
 
 const userRouter=Router()
 
-userRouter.get('/',getUsers);
+// userRouter.get('/',getUsers); removed for safety .. will implement after admin auth
 
 userRouter.get('/:id',authorize,getUser);
 
